@@ -8,8 +8,19 @@ export class JitsiPluginWeb extends WebPlugin implements JitsiPluginPlugin {
     return options;
   }
 
-  async testPluginMethod(options: {msg: string}): Promise <{value: string}>{
+  async testPluginMethod(options: { msg: string }): Promise<{ value: string }> {
     alert(options.msg);
-    return {value: options.msg};
+    return { value: options.msg };
+  }
+
+  async joinCall(options: { room: string }): Promise<void> {
+    alert(`joinCall is not implemented on web. Room: ${options.room}`);
+  }
+
+  async startCall(): Promise<{ room: string }> {
+    const generatedRoom = 'web-room-' + Math.random().toString(36).substring(2, 10);
+    alert(`startCall is not implemented on web. Room: ${generatedRoom}`);
+    return { room: generatedRoom };
   }
 }
+

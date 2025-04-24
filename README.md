@@ -15,6 +15,8 @@ npx cap sync
 
 * [`echo(...)`](#echo)
 * [`testPluginMethod(...)`](#testpluginmethod)
+* [`joinCall(...)`](#joincall)
+* [`startCall()`](#startcall)
 
 </docgen-index>
 
@@ -47,6 +49,30 @@ testPluginMethod(options: { msg: string; }) => Promise<{ value: string; }>
 | **`options`** | <code>{ msg: string; }</code> |
 
 **Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+
+--------------------
+
+
+### joinCall(...)
+
+```typescript
+joinCall(options: { room: string; }) => Promise<void>
+```
+
+| Param         | Type                           |
+| ------------- | ------------------------------ |
+| **`options`** | <code>{ room: string; }</code> |
+
+--------------------
+
+
+### startCall()
+
+```typescript
+startCall() => Promise<{ room: string; }>
+```
+
+**Returns:** <code>Promise&lt;{ room: string; }&gt;</code>
 
 --------------------
 
