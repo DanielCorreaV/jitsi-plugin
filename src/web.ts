@@ -3,6 +3,12 @@ import { WebPlugin } from '@capacitor/core';
 import type { JitsiPluginPlugin } from './definitions';
 
 export class JitsiPluginWeb extends WebPlugin implements JitsiPluginPlugin {
+  createRoom(): Promise<{ meetingId: string; }> {
+    throw new Error('Method not implemented.');
+  }
+  createMeetingId(): Promise<{ meetingId: string; }> {
+    throw new Error('Method not implemented.');
+  }
   async echo(options: { value: string }): Promise<{ value: string }> {
     console.log('ECHO', options);
     return options;
@@ -13,8 +19,8 @@ export class JitsiPluginWeb extends WebPlugin implements JitsiPluginPlugin {
     return { value: options.msg };
   }
 
-  async joinCall(options: { room: string }): Promise<void> {
-    alert(`joinCall is not implemented on web. Room: ${options.room}`);
+  async joinCall(options: {meetingId: string, userName: string}): Promise<void> {
+    alert(`joinCall is not implemented on web. Room: ${options.meetingId}`);
   }
 
   async startCall(): Promise<{ room: string }> {
